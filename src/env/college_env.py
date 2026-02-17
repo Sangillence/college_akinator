@@ -47,6 +47,8 @@ class CollegeEnv:
             return self.encoder.encode_gender(answer)
         elif col == "State":
             return self.encoder.encode_state(answer)
+        elif col in ["Placement",	"Research",	"Startup"]:
+            return  self.encoder.encode_interest_c2(answer)
         else:
             return self.encoder.encode_interest(answer)
 

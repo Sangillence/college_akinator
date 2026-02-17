@@ -15,9 +15,11 @@ class StateEncoder:
             "Interested": 2,
             "Much_Interested": 3,
             "Very_Interested": 4,
+            "Low": 0,
+            "Medium": 1,
             "High":2,
-            "Medium":0,
-            "Low":1
+
+
         }
 
         self.max_rank = df['Rank'].max()
@@ -45,3 +47,6 @@ class StateEncoder:
 
     def encode_interest(self, interest):
         return  np.array([self.interestMap[interest]/4.0])
+
+    def encode_interest_c2(self, interest):
+        return  np.array([self.interestMap[interest]/2.0])
